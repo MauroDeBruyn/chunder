@@ -1,3 +1,10 @@
+header
+{
+  position: absolute;
+  left: 30px;
+  top: 10px;
+}
+
 .site-identity h1
 {
   font-size: 1.5em;
@@ -19,9 +26,20 @@
   margin: 1.4em 1em 1em 1em;
 }
 
-body
+.background
 {
+  background-color: black;
   background-image: url('Pictures/Banner.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  display:grid;
+}
+
+.background_blur
+{
+  background-color: black;
+  background-image: url('Pictures/Banner_blur.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -69,10 +87,10 @@ h1
   font-family: Arial, sans-serif;
   font-size: 50px;
   color: #f2f2f2;
-  text-align: center;
   margin: 0;
   padding: 20px;
   text-transform: uppercase;
+  text-align: center;
 }
 
 /* HEADING STYLE */
@@ -80,6 +98,7 @@ h1
   text-align: center;
   text-transform: uppercase;
   padding-bottom: 5px;
+  padding-top: 80px;
   font-weight: normal;
   letter-spacing: 20px;
 }
@@ -111,6 +130,9 @@ h1
 /* Social buttons */
 .wrapper{
   display:inline-flex;
+  position: absolute;
+  right: 30px;
+  top: 30px;
 }
 
 .wrapper .icon{
@@ -130,7 +152,7 @@ h1
   height: 40px;
   width: 40px;
   display:block;
-  background: #fff;
+  background: #d9d9d9;
   box-shadow: 0 10px 10px rgba(0,0,0,0.1);
   border-radius:50%;
   text-align:center;
@@ -154,12 +176,6 @@ h1
   opacity:0;
   pointer-events: none;
   transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.wrapper .icon:hover .tooltip{
-  opacity:1;
-  pointer-events: auto;
-  top:-70px;
 }
 
 .wrapper .icon .tooltip:before{
@@ -206,4 +222,30 @@ svg {
     margin-right: auto;
     height: auto;
     padding-top: 10px; //margin-top doesn't work
+}
+
+/*Images*/
+#image-gallery {
+  width: 600px;
+  margin: 0 auto;
+}
+
+#current-image {
+  width: 100%;
+  margin-top: 40px;
+  border: 5px solid #555;
+}
+
+#image-thumbs {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.thumb {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 10px;
+  cursor: pointer;
 }
